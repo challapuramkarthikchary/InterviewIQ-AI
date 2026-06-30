@@ -151,7 +151,9 @@ public class AIService {
             String aiText = callGemini(prompt);
             return parseQuestionList(aiText);
         } catch (Exception e) {
-            System.err.println("[AIService] generateQuestions failed: " + e.getMessage());
+            System.err.println("========== GEMINI ERROR ==========");
+            e.printStackTrace();
+            System.err.println("==================================");
             return null;
         }
     }
