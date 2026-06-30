@@ -11,7 +11,7 @@ public class AuthSerivce {
 
     private final UserRepository userRepository;
 
-    private AuthSerivce(UserRepository userRepository){
+    public AuthSerivce(UserRepository userRepository){
         this.userRepository = userRepository;
     }
 
