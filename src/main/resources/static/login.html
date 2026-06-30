@@ -65,13 +65,13 @@
           body: JSON.stringify({ email, password })
         });
 
-        if (res.ok) {
-          const data = await res.json();
+        const data = await res.json();
+        if (data.success) {
           localStorage.setItem("user", JSON.stringify(data));
-          alert("Login successful!");
+          alert(data.message);
           window.location.href = "dashboard.html";
         } else {
-          alert("Invalid email or password");
+          alert(data.message);
         }
       } catch (err) {
         alert("Server error: " + err.message);
